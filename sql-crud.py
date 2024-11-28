@@ -83,7 +83,22 @@ geoff_fletcher = Programmer(
 #session.add(margaret_hamilton)
 #session.add(bill_gates)
 #session.add(tim_berners_lee)
-session.add(geoff_fletcher)
+#session.add(geoff_fletcher)
+
+
+#programmer = session.query(Programmer).filter_by(id=7).first()
+#programmer.famous_for = "World President"
+
+people = session.query(Programmer)
+for person in people:
+    if person.gender == "F":
+        person.gender = "Female"
+    elif person.gender == "M":
+         person.gender = "Male"
+    else:
+         print("Gender not defined")
+    session.commit()
+
 session.commit()
 
 programmers = session.query(Programmer)
