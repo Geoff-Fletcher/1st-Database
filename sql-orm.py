@@ -1,12 +1,12 @@
 from sqlalchemy import(
-    create_engine, column, Float, ForeignKey, Integer, String
+    create_engine, Column, Float, ForeignKey, Integer, String
 )
 
-from sqlalchemy.ext.declaritive import declaritive_base
+from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 db = create_engine("postgresql:///chinook")
-base = declaritive_base()
+base = declarative_base()
 
 class Artist(base):
     __tablename__ = "Artist"
